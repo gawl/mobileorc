@@ -1,4 +1,4 @@
-#N canvas 187 570 390 560 16;
+#N canvas 256 35 390 560 16;
 #X obj 55 469 output~;
 #X floatatom 98 174 5 0 0 0 - - -, f 5;
 #X floatatom 157 174 5 0 0 0 - - -, f 5;
@@ -74,7 +74,7 @@
 #X text 92 142 ratio index;
 #X text 97 331 fmod depth offs feedb;
 #X text 71 353 [0.01Hz] [ms] [ms] [0.01];
-#N canvas 1493 457 770 793 mod-delay 0;
+#N canvas 213 22 770 699 mod-delay 0;
 #X obj 136 199 line~;
 #X obj 136 165 pack 0 100;
 #X obj 264 418 line~;
