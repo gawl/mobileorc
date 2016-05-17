@@ -1,7 +1,7 @@
 #N canvas 671 79 390 560 16;
 #X floatatom 98 174 5 0 0 0 - fm_ratio -, f 5;
 #X floatatom 157 174 5 0 0 0 - fm_ind -, f 5;
-#X obj 45 25 tgl 25 0 empty n_trig empty 17 7 0 10 -204786 -1 -1 1
+#X obj 45 25 tgl 25 0 empty n_trig empty 17 7 0 10 -204786 -1 -1 0
 1;
 #X floatatom 228 51 5 10 10000 0 - n_rtime -, f 5;
 #N canvas 1463 907 450 300 percenv 0;
@@ -29,7 +29,7 @@
 #X connect 9 0 4 0;
 #X restore 55 286 pd percenv;
 #X obj 152 251 r playnote;
-#N canvas 1647 541 304 400 fm-gen 0;
+#N canvas 1647 541 304 400 fm-gen 1;
 #X obj 27 28 inlet;
 #X obj 110 28 inlet;
 #X obj 186 29 inlet;
@@ -178,7 +178,7 @@
 #X obj 55 455 *~ 0.3;
 #X obj 84 49 bng 25 250 50 0 empty n_bang empty 17 7 0 10 -204786 -1
 -1;
-#N canvas 1519 647 759 485 tablet_ctl 0;
+#N canvas 1297 798 759 485 tablet_ctl 1;
 #X obj 65 174 s n_trig;
 #X obj 168 175 s n_bang;
 #X obj 261 175 s n_from;
@@ -203,7 +203,7 @@
 #X obj 377 384 * 500;
 #X obj 530 384 * 99;
 #X obj 64 258 * 600;
-#X obj 228 259 * 100;
+#X obj 228 259 * 1000;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 10 0 12 0;
