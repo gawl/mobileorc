@@ -1,0 +1,3 @@
+mod 6;
+0 amp 0.7;0 note 71;250 amp 0.7;0 note 72;250 amp 0.7;0 note 71;250 amp 0.7;0 note 72;
+250 amp 0.7;0 note 71;250 amp 0.0;0 note 0;
