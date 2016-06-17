@@ -1,6 +1,6 @@
 #N canvas 494 144 260 559 12;
 #N canvas 75 101 677 469 in-c-player 0;
-#X obj 109 136 tgl 25 0 empty play PLAY 0 -7 0 10 -261234 -1 -1 1 1
+#X obj 109 136 tgl 25 0 empty play PLAY 0 -7 0 10 -261234 -1 -1 0 1
 ;
 #X obj 84 251 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -16,7 +16,7 @@
 #X obj 190 275 r mod;
 #X obj 110 227 metro 250;
 #X floatatom 138 168 5 0 0 0 - - -, f 5;
-#X msg 343 185 read fragments/frag\$1.txt;
+#X msg 343 215 read fragments/frag\$1.txt;
 #X obj 260 161 f;
 #X obj 295 161 + 1;
 #X obj 144 136 bng 25 250 50 0 empty next NEXT 0 -7 0 10 -204786 -1
@@ -26,7 +26,7 @@
 -1 -1;
 #X obj 251 89 loadbang;
 #X obj 110 251 delay 150;
-#X obj 343 153 r frag;
+#X obj 301 122 r frag;
 #X obj 113 196 hsl 90 15 0 150 0 0 empty del empty -2 -8 0 10 -204786
 -1 -1 0 1;
 #X obj 260 186 s menuupd;
@@ -53,16 +53,14 @@
 #X connect 18 0 17 0;
 #X connect 19 0 17 0;
 #X connect 20 0 2 0;
-#X connect 21 0 13 0;
+#X connect 21 0 14 0;
 #X connect 22 0 20 1;
 #X coords 0 -1 1 1 120 120 1 100 100;
 #X restore 65 16 pd in-c-player;
 #N canvas 930 168 1113 506 tablet-ctl 0;
 #X obj 20 21 receive fromGUI;
 #X obj 20 46 list trim;
-#X obj 579 106 send toGUI;
-#X obj 579 51 list prepend set;
-#X msg 579 78 list /blink \$1 \$2;
+#X obj 579 76 send toGUI;
 #X obj 741 21 receive fromSystem;
 #X obj 741 46 list trim;
 #X obj 741 71 route /tilts;
@@ -114,56 +112,56 @@ frag48 frag49 frag50 frag51 frag52 frag53;
 #X obj 818 155 * 2000;
 #X obj 212 131 s del-mix;
 #X obj 212 102 * 0.7;
+#X msg 579 48 list /count \$1;
 #X connect 0 0 1 0;
-#X connect 1 0 29 0;
+#X connect 1 0 27 0;
 #X connect 3 0 4 0;
-#X connect 4 0 2 0;
+#X connect 4 0 5 0;
 #X connect 5 0 6 0;
-#X connect 6 0 7 0;
-#X connect 7 0 8 0;
-#X connect 8 0 23 0;
-#X connect 8 1 24 0;
-#X connect 9 0 13 0;
-#X connect 10 0 14 0;
-#X connect 15 0 16 0;
-#X connect 16 0 12 0;
-#X connect 18 0 21 0;
-#X connect 20 0 3 0;
-#X connect 21 0 19 0;
-#X connect 22 0 11 0;
-#X connect 23 0 22 0;
-#X connect 24 0 47 0;
-#X connect 25 0 26 0;
-#X connect 25 0 26 1;
-#X connect 26 0 37 0;
-#X connect 28 0 27 0;
-#X connect 29 0 15 0;
-#X connect 29 1 9 0;
-#X connect 29 2 17 0;
-#X connect 29 3 10 0;
-#X connect 29 4 49 0;
-#X connect 29 5 28 0;
-#X connect 29 6 30 0;
-#X connect 29 7 25 0;
-#X connect 29 7 25 1;
-#X connect 29 8 38 0;
-#X connect 29 9 40 0;
-#X connect 29 10 42 0;
-#X connect 29 10 42 1;
-#X connect 30 0 31 0;
-#X connect 31 0 32 0;
-#X connect 36 0 33 0;
-#X connect 37 0 36 0;
+#X connect 6 0 21 0;
+#X connect 6 1 22 0;
+#X connect 7 0 11 0;
+#X connect 8 0 12 0;
+#X connect 13 0 14 0;
+#X connect 14 0 10 0;
+#X connect 16 0 19 0;
+#X connect 18 0 48 0;
+#X connect 19 0 17 0;
+#X connect 20 0 9 0;
+#X connect 21 0 20 0;
+#X connect 22 0 45 0;
+#X connect 23 0 24 0;
+#X connect 23 0 24 1;
+#X connect 24 0 35 0;
+#X connect 26 0 25 0;
+#X connect 27 0 13 0;
+#X connect 27 1 7 0;
+#X connect 27 2 15 0;
+#X connect 27 3 8 0;
+#X connect 27 4 47 0;
+#X connect 27 5 26 0;
+#X connect 27 6 28 0;
+#X connect 27 7 23 0;
+#X connect 27 7 23 1;
+#X connect 27 8 36 0;
+#X connect 27 9 38 0;
+#X connect 27 10 40 0;
+#X connect 27 10 40 1;
+#X connect 28 0 29 0;
+#X connect 29 0 30 0;
+#X connect 34 0 31 0;
+#X connect 35 0 34 0;
+#X connect 36 0 37 0;
+#X connect 37 0 32 0;
 #X connect 38 0 39 0;
-#X connect 39 0 34 0;
+#X connect 39 0 33 0;
 #X connect 40 0 41 0;
-#X connect 41 0 35 0;
-#X connect 42 0 43 0;
-#X connect 42 0 43 1;
-#X connect 43 0 44 0;
-#X connect 46 0 45 0;
+#X connect 40 0 41 1;
+#X connect 41 0 42 0;
+#X connect 44 0 43 0;
+#X connect 45 0 44 0;
 #X connect 47 0 46 0;
-#X connect 49 0 48 0;
+#X connect 48 0 2 0;
 #X restore 73 502 pd tablet-ctl;
 #N canvas 219 22 825 938 analog-synth 0;
 #X obj 432 198 r note;
@@ -177,20 +175,20 @@ frag48 frag49 frag50 frag51 frag52 frag53;
 #X text 407 223 midinote amp dur;
 #X msg 298 553 1.5;
 #X obj 121 140 hsl 128 15 0 0.2 0 0 empty osc2-detune osc2-detune -2
--8 0 10 -228856 -1 -1 6098 1;
+-8 0 10 -228856 -1 -1 0 1;
 #X obj 121 208 hsl 128 15 10 4000 1 0 empty cutoff cutoff -2 -8 0 10
--228856 -1 -1 7678 1;
+-228856 -1 -1 0 1;
 #X obj 121 174 hsl 128 15 -1.5 1.4 0 0 empty osc2-oct osc2-oct -2 -8
-0 10 -228856 -1 -1 1847 1;
+0 10 -228856 -1 -1 0 1;
 #X obj 121 345 hsl 128 15 30 120 0 0 empty del-time del-time -2 -8
 0 10 -228856 -1 -1 0 1;
 #X obj 121 278 hsl 128 15 -0.5 5 0 0 empty filt-env filt-env -2 -8
-0 10 -228856 -1 -1 3606 1;
+0 10 -228856 -1 -1 0 1;
 #X obj 121 411 hsl 128 15 0.01 1 1 0 empty volume volume -2 -8 0 10
--228856 -1 -1 10986 1;
+-228856 -1 -1 0 1;
 #X obj 434 415 *~ 0.5;
 #X obj 121 243 hsl 128 15 1 4 0 0 empty vcf-rez vcf-rez -2 -8 0 10
--228856 -1 -1 3138 1;
+-228856 -1 -1 0 1;
 #X obj 618 201 line~;
 #X obj 618 117 t b b;
 #X msg 286 514 35;
@@ -201,7 +199,7 @@ frag48 frag49 frag50 frag51 frag52 frag53;
 #X obj 436 540 bob~;
 #X msg 327 512 2;
 #X obj 121 378 hsl 128 15 0 1 0 0 empty del-mix del-mix -2 -8 0 10
--228856 -1 -1 3953 1;
+-228856 -1 -1 0 1;
 #X obj 121 311 hsl 128 15 0 0.01 0 0 empty vibrato vibrato -2 -8 0
 10 -228856 -1 -1 0 1;
 #N canvas 177 23 720 739 bandlimosc 0;
