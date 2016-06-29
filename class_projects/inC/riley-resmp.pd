@@ -186,11 +186,11 @@
 #X obj 179 136 bng 25 250 50 0 empty gotoone go_to_1 -5 -7 0 10 -204786
 -1 -1;
 #X obj 251 89 loadbang;
-#X obj 110 251 delay 150;
 #X obj 318 123 r frag;
 #X obj 113 196 hsl 90 15 0 150 0 0 empty del empty -2 -8 0 10 -204786
 -1 -1 0 1;
 #X obj 260 186 s menuupd;
+#X obj 110 251 delay 250;
 #X connect 0 0 11 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -202,20 +202,20 @@
 #X connect 7 0 9 0;
 #X connect 9 0 8 0;
 #X connect 10 0 4 1;
-#X connect 11 0 20 0;
+#X connect 11 0 23 0;
 #X connect 12 0 13 0;
 #X connect 13 0 8 0;
 #X connect 14 0 15 0;
 #X connect 14 0 12 0;
-#X connect 14 0 23 0;
+#X connect 14 0 22 0;
 #X connect 15 0 14 1;
 #X connect 16 0 14 0;
 #X connect 17 0 14 0;
 #X connect 18 0 17 0;
 #X connect 19 0 17 0;
-#X connect 20 0 2 0;
-#X connect 21 0 14 0;
-#X connect 22 0 20 1;
+#X connect 20 0 14 0;
+#X connect 21 0 23 1;
+#X connect 23 0 2 0;
 #X coords 0 -1 1 1 120 120 1 100 100;
 #X restore 65 16 pd in-c-player;
 #N canvas 1333 785 1113 506 tablet-ctl 0;
