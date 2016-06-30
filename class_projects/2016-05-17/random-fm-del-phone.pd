@@ -177,7 +177,7 @@
 #X obj 55 487 dac~;
 #X obj 76 49 bng 25 250 50 0 empty n_bang empty 17 7 0 10 -204786 -1
 -1;
-#N canvas 409 23 911 699 tablet_ctl 0;
+#N canvas 409 23 847 960 tablet_ctl 0;
 #X obj 65 174 s n_trig;
 #X obj 168 175 s n_bang;
 #X obj 261 175 s n_from;
@@ -205,7 +205,7 @@
 #X obj 228 259 * 500;
 #X obj 55 463 route /preset1 /preset2 /preset3 /preset4 /preset5 /preset6
 /preset7 /preset8;
-#X msg 55 555 \; n_from 72 \; n_width 0 \; n_rtime 700 \; fm_ratio
+#X msg 55 585 \; n_from 72 \; n_width 0 \; n_rtime 700 \; fm_ratio
 300 \; fm_ind 300 \; del_fmod 1 \; del_depth 30 \; del_offs 200 \;
 del_feedb 0 \;;
 #X obj 55 523 sel 1;
@@ -237,6 +237,7 @@ del_feedb 0 \;;
 #X msg 201 551 \; n_from 72 \; n_width 30 \; n_rtime 300 \; fm_ratio
 300 \; fm_ind 300 \; del_fmod 1 \; del_depth 30 \; del_offs 400 \;
 del_feedb 50 \;;
+#X obj 74 554 loadbang;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 10 0 12 0;
@@ -278,8 +279,8 @@ del_feedb 50 \;;
 #X connect 36 0 35 0;
 #X connect 38 0 37 0;
 #X connect 40 0 39 0;
+#X connect 42 0 26 0;
 #X restore 254 160 pd tablet_ctl;
-#X obj 55 455 *~ 0.7;
 #N canvas 486 705 881 468 tablet_set 0;
 #X obj 204 141 r fm_ind;
 #X obj 27 141 r fm_ratio;
@@ -365,6 +366,7 @@ del_feedb 50 \;;
 #X connect 40 0 19 0;
 #X connect 41 0 19 0;
 #X restore 251 192 pd tablet_set;
+#X obj 55 455 clip~ -1 1;
 #X connect 0 0 6 1;
 #X connect 1 0 6 2;
 #X connect 2 0 7 0;
@@ -372,7 +374,7 @@ del_feedb 50 \;;
 #X connect 4 0 11 0;
 #X connect 5 0 4 1;
 #X connect 6 0 4 0;
-#X connect 11 0 23 0;
+#X connect 11 0 24 0;
 #X connect 12 0 11 1;
 #X connect 13 0 11 2;
 #X connect 14 0 11 3;
@@ -381,5 +383,5 @@ del_feedb 50 \;;
 #X connect 17 0 7 3;
 #X connect 19 0 6 0;
 #X connect 21 0 7 1;
-#X connect 23 0 20 1;
-#X connect 23 0 20 0;
+#X connect 24 0 20 1;
+#X connect 24 0 20 0;
