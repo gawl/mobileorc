@@ -121,7 +121,7 @@ fcoef6 30 \;;
 #X connect 50 0 31 0;
 #X connect 51 0 15 0;
 #X restore 337 388 pd additive1;
-#X obj 111 122 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
+#X obj 111 122 hradio 15 1 0 3 empty program empty 0 -8 0 10 -262144
 -1 -1 0;
 #X connect 3 0 4 0;
 #X connect 3 0 4 1;
