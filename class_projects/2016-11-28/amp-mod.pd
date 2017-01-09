@@ -3,7 +3,7 @@
 #X obj 129 180 *~;
 #X obj 129 17 inlet~;
 #X obj 129 244 outlet~;
-#X obj 147 133 expr~ $v1/2.1+0.5;
+#X obj 147 133 expr~ $v1/3+0.7;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
