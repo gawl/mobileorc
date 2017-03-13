@@ -1,4 +1,4 @@
-#N canvas 682 33 520 313 10;
+#N canvas 682 33 551 316 10;
 #N canvas 636 377 252 339 long 0;
 #X obj 63 264 hip~ 5;
 #X obj 63 220 line~;
@@ -37,7 +37,7 @@
 #X obj 198 79 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 279 86 hsl 128 15 50 1000 1 0 empty repeat repeat -2 -8 0 10
--262130 -1 -1 6650 1;
+-262130 -1 -1 0 1;
 #X obj 271 171 random 100;
 #X obj 271 193 / 100;
 #X obj 271 215 + 1;
@@ -45,7 +45,7 @@
 -1 -1;
 #X obj 249 110 * 100;
 #X obj 330 147 hsl 128 15 0 500 0 0 empty repeat_jitter repeat_jitter
--2 -8 0 10 -261682 -1 -1 1905 1;
+-2 -8 0 10 -261682 -1 -1 0 1;
 #X obj 37 117 hsl 128 15 50 500 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 34 143 s glength;
@@ -58,7 +58,7 @@
 #X obj 424 192 / 100;
 #X obj 424 214 + 1;
 #X obj 484 148 hsl 128 15 0 500 0 0 empty start_jitter start_jitter
--2 -8 0 10 -261682 -1 -1 2540 1;
+-2 -8 0 10 -261682 -1 -1 0 1;
 #X obj 34 172 hsl 128 15 0 0.8 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 33 199 s start;
@@ -561,8 +561,8 @@
 ;
 #X obj 86 93 s tab-refresh;
 #N canvas 0 22 450 278 (subpatch) 0;
-#X array table-rec 411032 float 2;
-#X coords 0 1 411032 -1 200 140 1 0 0;
+#X array table-rec 411032 float 2 black black;
+#X coords 0 1 411032 -1 200 140 1;
 #X restore 195 41 graph;
 #X obj 27 193 loadbang;
 #X obj 27 243 soundfiler;
@@ -584,21 +584,21 @@
 #X obj 42 103 *~;
 #N canvas 88 235 1056 526 GUI_ctl 0;
 #X obj 123 160 vsl 20 128 0 1 0 0 empty set_glength glth 0 -9 0 10
--204786 -1 -1 3810 1;
+-204786 -1 -1 0 1;
 #X obj 164 160 vsl 20 128 0 1 0 0 empty set_rep rep 0 -9 0 10 -204786
--1 -1 2540 1;
+-1 -1 0 1;
 #X obj 205 160 vsl 20 128 0 1 0 0 empty set_rjit rjt 0 -9 0 10 -204786
--1 -1 1905 1;
+-1 -1 0 1;
 #X obj 247 160 vsl 20 128 0 1 0 0 empty set_sjit sjt 0 -9 0 10 -204786
--1 -1 2540 1;
+-1 -1 0 1;
 #X obj 125 118 hsl 150 25 0 1 0 0 empty set_start start_position -2
--8 0 10 -261234 -1 -1 2235 1;
-#X obj 167 307 bng 25 250 50 0 rec empty rec 0 -5 0 10 -261234 -1 -1
+-8 0 10 -261234 -1 -1 0 1;
+#X obj 167 307 bng 25 250 50 0 rec empty rec 0 -9 0 10 -261234 -1 -1
 ;
-#X obj 207 307 tgl 25 0 quant empty quant 0 -5 0 10 -204800 -1 -1 0
+#X obj 207 307 tgl 25 0 quant empty quant 0 -9 0 10 -204800 -1 -1 0
 1;
 #X obj 294 159 vradio 25 1 0 6 pres empty preset 0 -8 0 10 -232576
--1 -1 2;
+-1 -1 0;
 #X obj 397 36 key;
 #X obj 355 61 print;
 #X msg 397 80 0;
@@ -618,7 +618,7 @@
 #X obj 419 388 * 500;
 #X obj 419 410 s start_jitter;
 #X obj 32 390 * 0.8;
-#X obj 248 307 tgl 25 0 pgran empty gran 0 -5 0 10 -232576 -1 -1 0
+#X obj 248 307 tgl 25 0 pgran empty gran 0 -9 0 10 -232576 -1 -1 0
 1;
 #X text 159 338 keys: L R Q G;
 #X obj 362 168 route 108 114 113 103;
@@ -633,7 +633,7 @@
 -1 -1;
 #X obj 605 34 r pres;
 #X floatatom 605 56 5 0 0 0 - - -, f 5;
-#X obj 127 307 bng 25 250 50 0 plong empty long 0 -5 0 10 -232576 -1
+#X obj 127 307 bng 25 250 50 0 plong empty long 0 -9 0 10 -232576 -1
 -1;
 #X obj 605 75 route 0 1 2 3 4 5 6;
 #X msg 605 108 \; set_start 0.15 \; set_glength 1 \; set_rep 0.1 \;
