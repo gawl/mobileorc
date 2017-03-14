@@ -128,19 +128,21 @@ fcoef6 40 \;;
 #X restore 57 43 pd synth;
 #N canvas 1913 332 202 197 reverb 0;
 #X obj 64 91 rev1~;
-#X msg 118 45 50;
+#X msg 118 55 50;
 #X obj 118 20 loadbang;
 #X obj 9 22 inlet~;
-#X obj 9 126 outlet~;
+#X obj 9 146 outlet~;
 #X obj 9 60 *~ 0.3;
 #X obj 64 60 *~ 0.1;
-#X connect 0 0 4 0;
+#X obj 9 120 clip~ -1 1;
+#X connect 0 0 7 0;
 #X connect 1 0 0 1;
 #X connect 2 0 1 0;
 #X connect 3 0 6 0;
 #X connect 3 0 5 0;
-#X connect 5 0 4 0;
+#X connect 5 0 7 0;
 #X connect 6 0 0 0;
+#X connect 7 0 4 0;
 #X restore 57 75 pd reverb;
 #N canvas 839 698 1138 363 gamepad_ctl 0;
 #N canvas 119 121 450 278 (subpatch) 0;
@@ -260,14 +262,14 @@ przycisku/kontrolera w obiektach route ponizej;
 #X connect 44 0 39 1;
 #X restore 350 42 pd gamepad_ctl;
 #X obj 350 69 nbx 5 28 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -258113 -1 60 256;
+-262144 -258113 -1 0 256;
 #N canvas 1100 189 490 400 GUI_ctl 0;
 #X obj 96 282 s preset;
 #X obj 236 281 s note;
 #X obj 160 282 s playStop;
 #X obj 299 280 s amp;
 #X obj 116 113 vradio 25 1 0 5 empty empty empty 0 -8 0 10 -261234
--1 -1 3;
+-1 -1 0;
 #X obj 88 30 key;
 #N canvas 368 175 450 300 key-preset 0;
 #X obj 94 66 route 49 50 51 52 53, f 29;
@@ -293,9 +295,9 @@ przycisku/kontrolera w obiektach route ponizej;
 #X obj 159 114 tgl 25 0 empty empty empty 17 7 0 10 -261234 -1 -1 0
 1;
 #X obj 197 116 vsl 25 128 0 127 0 0 empty empty empty 0 -9 0 10 -261234
--1 -1 5400 1;
+-1 -1 5000 1;
 #X obj 239 115 vsl 25 128 0 127 0 0 empty empty empty 0 -9 0 10 -261234
--1 -1 12100 1;
+-1 -1 0 1;
 #X obj 181 30 keyup;
 #X obj 181 69 sel 32;
 #N canvas 1531 277 449 345 qwertyui 0;
