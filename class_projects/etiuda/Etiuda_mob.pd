@@ -189,7 +189,7 @@ fcoef6 40 \;;
 #X obj 9 150 outlet~;
 #X obj 9 78 *~ 0.3;
 #X obj 64 60 *~ 0.1;
-#X obj 9 123 clip~ -1 1;
+#X obj 9 123 clip~ -0.999 0.999;
 #X connect 0 0 7 0;
 #X connect 1 0 0 1;
 #X connect 2 0 1 0;
