@@ -1,0 +1,34 @@
+#N canvas 718 320 450 300 10;
+#X obj 171 120 osc~;
+#X obj 171 142 clip~ -0.5 0.5;
+#X obj 171 164 *~ 0.1;
+#X obj 171 186 dac~;
+#X obj 282 147 tgl 15 0 empty on empty 17 7 0 10 -262144 -1 -1 0 0.1
+;
+#X floatatom 166 87 5 0 0 0 - freq -, f 5;
+#N canvas 287 89 505 214 tablet-ctl 0;
+#X obj 55 23 receive fromGUI;
+#X obj 55 60 list trim;
+#X obj 55 97 route /myToggle /mySlider;
+#X obj 55 149 s on;
+#X obj 55 124 * 0.1;
+#X obj 125 124 * 500;
+#X obj 125 146 + 300;
+#X obj 126 182 s freq;
+#X obj 240 31 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 8 0 5 0;
+#X restore 38 92 pd tablet-ctl;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 4 0 2 1;
+#X connect 5 0 0 0;
