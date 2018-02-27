@@ -1,4 +1,4 @@
-#N canvas 0 22 1090 752 10;
+#N canvas 0 23 1090 752 10;
 #X obj 422 172 unpack f f f;
 #X obj 109 302 / 127;
 #X obj 401 320 / 127;
@@ -83,10 +83,10 @@
 #X connect 25 0 13 0;
 #X restore 422 147 pd formant-frequencies;
 #X obj 105 151 hsl 128 15 0 127 0 1 \$0-formant-q-s \$0-formant-q-r
-Q 133 7 0 10 -262144 -1 -1 0 1;
+Q 133 7 0 10 -262144 -1 -1 4200 1;
 #X obj 109 279 t f f f;
 #X obj 105 136 hsl 128 15 0 127 0 1 \$0-formant-formants-s \$0-formant-formants-r
-VOWELS 133 7 0 10 -262144 -1 -1 6200 1;
+VOWELS 133 7 0 10 -262144 -1 -1 6400 1;
 #X obj 52 457 vcf~ 207 5;
 #X obj 52 501 vcf~ 207 5;
 #X obj 53 558 vcf~ 207 5;
