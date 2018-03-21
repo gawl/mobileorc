@@ -1,4 +1,4 @@
-#N canvas 745 85 1018 752 10;
+#N canvas 947 71 1018 752 10;
 #X declare -path westcoast_abs;
 #X obj 464 545 maestro4 1;
 #X obj 547 50 basic-osc 1;
@@ -11,6 +11,21 @@
 #X obj 103 147 random-voltages 1;
 #X obj 543 408 stereo-delay 1;
 #X obj 67 702 declare -path westcoast_abs;
+#N canvas 0 23 450 300 mobmuplat 0;
+#X obj 150 38 r fromGUI;
+#X obj 150 59 list trim;
+#X obj 150 80 route /clock-rate /clock-on;
+#X obj 150 107 * 127;
+#X obj 151 153 s clock-rate;
+#X obj 150 128 int;
+#X obj 225 118 s clock-on;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 6 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;
+#X restore 824 310 pd mobmuplat;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;
