@@ -15,8 +15,8 @@
 #X text 524 223 RING/DAMP;
 #X obj 109 134 hsl 128 15 0 127 0 1 \$0-lpg-ring/damp-s \$0-lpg-ring/damp-r
 RING/DAMP 133 7 0 10 -262144 -1 -1 3800 1;
-#X obj 109 119 hsl 128 15 1.27 127 1 1 \$0-lpg-level-s \$0-lpg-level-r
-LEVEL 133 7 0 10 -262144 -1 -1 1800 1;
+#X obj 109 119 hsl 128 15 0 127 0 1 \$0-lpg-level-s \$0-lpg-level-r
+LEVEL 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 109 149 hsl 128 15 0 127 0 1 \$0-lpg-cv-att-s \$0-lpg-cv-att-r
 CV 133 7 0 10 -158136 -1 -1 9000 1;
 #X obj 455 118 - 1.27;
@@ -56,6 +56,8 @@ CV 133 7 0 10 -158136 -1 -1 9000 1;
 #X connect 6 0 0 0;
 #X restore 699 107 pd antipop;
 #X obj 573 127 *~;
+#X obj 141 29 r gate-lev;
+#X obj 141 50 s \$0-lpg-level-r;
 #X connect 0 0 33 0;
 #X connect 0 0 34 0;
 #X connect 1 0 22 0;
@@ -70,7 +72,7 @@ CV 133 7 0 10 -158136 -1 -1 9000 1;
 #X connect 8 0 30 0;
 #X connect 11 0 6 0;
 #X connect 14 0 8 0;
-#X connect 15 0 17 0;
+#X connect 15 0 3 0;
 #X connect 16 0 11 0;
 #X connect 17 0 3 0;
 #X connect 22 1 26 0;
@@ -86,4 +88,5 @@ CV 133 7 0 10 -158136 -1 -1 9000 1;
 #X connect 32 0 26 1;
 #X connect 33 0 34 1;
 #X connect 34 0 5 0;
+#X connect 35 0 36 0;
 #X coords 0 -1 1 1 200 70 2 100 100;

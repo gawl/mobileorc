@@ -41,11 +41,11 @@ empty 0 -8 0 10 -262144 -1 -1 0;
 #X msg 619 196 9999;
 #X obj 718 26 inlet~;
 #X obj 107 165 hsl 128 15 1.27 127 1 1 \$0-slope-fall-s \$0-slope-fall-r
-FALL 133 7 0 10 -262144 -1 -1 7500 1;
+FALL 133 7 0 10 -262144 -1 -1 11985 1;
 #X obj 107 133 hsl 128 15 1.27 127 1 1 \$0-slope-rise-s \$0-slope-rise-r
-RISE 133 7 0 10 -262144 -1 -1 1200 1;
+RISE 133 7 0 10 -262144 -1 -1 9444 1;
 #X obj 107 196 hsl 128 15 0 127 0 1 \$0-slope-depth-s \$0-slope-depth-r
-DEPTH-/+ 133 7 0 10 -150893 -1 -1 7300 1;
+DEPTH-/+ 133 7 0 10 -150893 -1 -1 6500 1;
 #X obj 107 149 hsl 128 15 0 127 0 1 \$0-slope-rise-cv-att-s \$0-slope-rise-cv-att-r
 RISE(CV) 133 7 0 10 -158136 -1 -1 0 1;
 #X obj 107 181 hsl 128 15 0 127 0 1 \$0-slope-fall-cv-att-s \$0-slope-fall-cv-att-r
@@ -94,7 +94,7 @@ FALL(CV) 133 7 0 10 -158136 -1 -1 4200 1;
 #X obj 927 683 outlet~;
 #X text 982 682 END OF CYCLE;
 #X obj 294 181 tgl 15 1 \$0-slope-curve-s \$0-slope-curve-r CURVE 17
-7 0 10 -262144 -1 -1 1 1;
+7 0 10 -262144 -1 -1 0 1;
 #X obj 128 563 t f f;
 #X obj 192 539 == 0;
 #X obj 128 622 line~;
@@ -120,7 +120,7 @@ FALL(CV) 133 7 0 10 -158136 -1 -1 4200 1;
 #X obj 836 578 *~ 2;
 #X obj 836 600 -~ 1;
 #X obj 344 384 t b b b b b;
-#X obj 796 151 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 796 151 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 796 77 env~;
 #X obj 796 99 > 0;
@@ -142,8 +142,18 @@ FALL(CV) 133 7 0 10 -158136 -1 -1 4200 1;
 #X obj 359 313 - 18;
 #X msg 344 531 1 \$1 \, 0 \$2 \$1;
 #X msg 408 413 0 1;
-#X obj 47 301 r slope-cycle;
-#X obj 47 322 s \$0-slope-cycle-r;
+#X obj 26 436 r slope-cycle;
+#X obj 26 457 s \$0-slope-cycle-r;
+#X obj 26 384 r slope-curve;
+#X obj 26 405 s \$0-slope-curve-r;
+#X obj 28 333 r slope-speed;
+#X obj 28 354 s \$0-slope-fast-med-slow-r;
+#X obj 28 248 r slope-rise;
+#X obj 28 269 s \$0-slope-rise-r;
+#X obj 26 289 r slope-fall;
+#X obj 26 310 s \$0-slope-fall-r;
+#X obj 144 276 r slope-depth;
+#X obj 144 297 s \$0-slope-depth-r;
 #X connect 0 0 86 0;
 #X connect 0 0 87 0;
 #X connect 0 0 87 1;
@@ -264,4 +274,9 @@ FALL(CV) 133 7 0 10 -158136 -1 -1 4200 1;
 #X connect 122 0 0 0;
 #X connect 123 0 0 0;
 #X connect 124 0 125 0;
+#X connect 126 0 127 0;
+#X connect 128 0 129 0;
+#X connect 130 0 131 0;
+#X connect 132 0 133 0;
+#X connect 134 0 135 0;
 #X coords 0 -1 1 1 250 140 2 100 100;

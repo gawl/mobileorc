@@ -14,13 +14,13 @@ CH2 -1 -9 0 10 -262144 -1 -1 5800 1;
 #X obj 197 238 hsl 30 15 0 127 0 1 \$0-maestro4-pan3-s \$0-maestro4-pan3-r
 PAN3 0 25 0 10 -262144 -1 -1 0 1;
 #X obj 194 155 vsl 17 80 0 127 0 1 \$0-maestro4-ch3-s \$0-maestro4-ch3-r
-CH3 -1 -9 0 10 -262144 -1 -1 3600 1;
+CH3 -1 -9 0 10 -262144 -1 -1 7844 1;
 #X obj 213 155 vu 15 80 \$0-maestro4-ch3-meter-r empty -1 -8 0 10 -66577
 -1 0 0;
 #X obj 242 238 hsl 30 15 0 127 0 1 \$0-maestro4-pan4-s \$0-maestro4-pan4-r
 PAN4 0 25 0 10 -262144 -1 -1 2900 1;
 #X obj 239 155 vsl 17 80 0 127 0 1 \$0-maestro4-ch4-s \$0-maestro4-ch4-r
-CH4 -1 -9 0 10 -262144 -1 -1 3500 1;
+CH4 -1 -9 0 10 -262144 -1 -1 7844 1;
 #X obj 258 155 vu 15 80 \$0-maestro4-ch4-meter-r empty -1 -8 0 10 -66577
 -1 0 0;
 #X obj 309 155 vu 15 80 \$0-maestro4-meter-left-r empty -1 -8 0 10
@@ -28,7 +28,7 @@ CH4 -1 -9 0 10 -262144 -1 -1 3500 1;
 #X obj 327 155 vu 15 80 \$0-maestro4-meter-right-r empty -1 -8 0 10
 -66577 -1 0 0;
 #X obj 277 155 vsl 30 79 1.27 127 1 1 \$0-maestro4-master-s \$0-maestro4-master-r
-MASTER 0 -8 0 10 -262144 -1 -1 5200 1;
+MASTER 0 -8 0 10 -262144 -1 -1 7800 1;
 #X obj 104 131 cnv 5 5 5 empty empty MAESTRO4 0 0 0 12 -262144 -66577
 0;
 #X obj 166 109 cnv 5 5 5 empty empty CH2 0 0 0 8 -262144 -66577 0;
@@ -204,6 +204,11 @@ MASTER 0 -8 0 10 -262144 -1 -1 5200 1;
 #X connect 6 0 0 0;
 #X restore 360 356 pd antipop;
 #X obj 456 405 *~;
+#X obj 222 12 r mix-delay;
+#X obj 80 12 r mix-synth;
+#X obj 80 33 s \$0-maestro4-ch1-r;
+#X obj 222 33 s \$0-maestro4-ch3-r;
+#X obj 222 56 s \$0-maestro4-ch4-r;
 #X connect 20 0 167 0;
 #X connect 20 0 166 0;
 #X connect 21 0 35 0;
@@ -351,4 +356,7 @@ MASTER 0 -8 0 10 -262144 -1 -1 5200 1;
 #X connect 165 0 153 0;
 #X connect 166 0 167 1;
 #X connect 167 0 39 0;
+#X connect 168 0 171 0;
+#X connect 168 0 172 0;
+#X connect 169 0 170 0;
 #X coords 0 -1 1 1 250 175 2 100 100;
