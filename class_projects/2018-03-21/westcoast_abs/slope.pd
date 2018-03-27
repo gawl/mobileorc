@@ -1,4 +1,4 @@
-#N canvas 0 51 1133 727 10;
+#N canvas 258 47 1133 727 10;
 #X obj 344 553 vline~;
 #X obj 344 418 f;
 #X obj 344 508 pack f f;
@@ -28,7 +28,7 @@
 #X obj 104 109 cnv 5 5 5 empty empty TRIG 0 0 0 8 -262144 -226533 0
 ;
 #X obj 294 136 vradio 15 1 1 3 \$0-slope-fast-med-slow-s \$0-slope-fast-med-slow-r
-empty 0 -8 0 10 -262144 -1 -1 1;
+empty 0 -8 0 10 -262144 -1 -1 0;
 #X obj 311 176 cnv 5 5 5 empty empty SLOW 0 0 0 8 -262144 -1 0;
 #X obj 258 231 cnv 5 5 5 empty empty EOR 0 0 0 8 -262144 -226533 0
 ;
@@ -43,7 +43,7 @@ empty 0 -8 0 10 -262144 -1 -1 1;
 #X obj 107 165 hsl 128 15 1.27 127 1 1 \$0-slope-fall-s \$0-slope-fall-r
 FALL 133 7 0 10 -262144 -1 -1 7500 1;
 #X obj 107 133 hsl 128 15 1.27 127 1 1 \$0-slope-rise-s \$0-slope-rise-r
-RISE 133 7 0 10 -262144 -1 -1 2900 1;
+RISE 133 7 0 10 -262144 -1 -1 1200 1;
 #X obj 107 196 hsl 128 15 0 127 0 1 \$0-slope-depth-s \$0-slope-depth-r
 DEPTH-/+ 133 7 0 10 -150893 -1 -1 7300 1;
 #X obj 107 149 hsl 128 15 0 127 0 1 \$0-slope-rise-cv-att-s \$0-slope-rise-cv-att-r
@@ -142,6 +142,8 @@ FALL(CV) 133 7 0 10 -158136 -1 -1 4200 1;
 #X obj 359 313 - 18;
 #X msg 344 531 1 \$1 \, 0 \$2 \$1;
 #X msg 408 413 0 1;
+#X obj 47 301 r slope-cycle;
+#X obj 47 322 s \$0-slope-cycle-r;
 #X connect 0 0 86 0;
 #X connect 0 0 87 0;
 #X connect 0 0 87 1;
@@ -261,4 +263,5 @@ FALL(CV) 133 7 0 10 -158136 -1 -1 4200 1;
 #X connect 121 0 69 0;
 #X connect 122 0 0 0;
 #X connect 123 0 0 0;
+#X connect 124 0 125 0;
 #X coords 0 -1 1 1 250 140 2 100 100;
