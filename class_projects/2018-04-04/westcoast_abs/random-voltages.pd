@@ -1,0 +1,60 @@
+#N canvas 420 23 957 605 10;
+#X obj 514 195 noise~;
+#X obj 514 290 lop~;
+#X obj 105 136 hsl 128 15 0 127 0 1 \$0-random-bi-random-s \$0-random-bi-random-r
+RANDOM 133 7 0 10 -262144 -1 -1 1856 1;
+#X obj 535 262 mtof;
+#X obj 514 327 samphold~;
+#X obj 774 34 inlet~;
+#X obj 103 116 bng 15 50 50 0 empty empty empty 17 7 0 10 -262144 -226533
+-1;
+#X obj 121 125 cnv 5 5 5 empty empty RANDOM-VOLTAGES 0 0 0 12 -262144
+-66577 0;
+#X obj 105 109 cnv 5 5 5 empty empty CLOCK-IN 0 0 0 8 -262144 -226533
+0;
+#X obj 408 437 lop~ 1;
+#X msg 102 209 127 \$1;
+#X obj 102 231 -;
+#X obj 102 253 * 0.5;
+#X obj 105 151 hsl 128 15 0 127 0 1 \$0-random-bi-slew-s \$0-random-bi-slew-r
+SLEW 133 7 0 10 -262144 -1 -1 5000 1;
+#X obj 240 125 cnv 5 5 5 empty \$0-instance-num 1 0 0 0 12 -262144
+-66577 0;
+#X obj 774 118 threshold~ 0.99 0 1 0;
+#X obj 774 140 t b b;
+#X msg 774 312 reset;
+#X obj 514 555 abs~;
+#X obj 514 577 outlet~ UNI-POLAR;
+#X obj 408 577 outlet~ BI-POLAR;
+#X obj 248 178 cnv 5 5 5 empty empty UNI-P 0 0 0 8 -262144 -66577 0
+;
+#X obj 103 178 cnv 5 5 5 empty empty BI-P 0 0 0 8 -262144 -66577 0
+;
+#X obj 102 275 + 0.1;
+#X floatatom 102 297 5 0 0 0 - - -, f 5;
+#X obj 109 44 r rvolt-random;
+#X obj 109 65 s \$0-random-bi-random-r;
+#X obj 269 44 r rvolt-slew;
+#X obj 269 65 s \$0-random-bi-slew-r;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 1;
+#X connect 4 0 9 0;
+#X connect 5 0 15 0;
+#X connect 9 0 18 0;
+#X connect 9 0 20 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 23 0;
+#X connect 13 0 10 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 16 1 6 0;
+#X connect 17 0 4 0;
+#X connect 18 0 19 0;
+#X connect 23 0 9 1;
+#X connect 23 0 24 0;
+#X connect 25 0 26 0;
+#X connect 27 0 28 0;
+#X coords 0 -1 1 1 175 85 2 100 100;
