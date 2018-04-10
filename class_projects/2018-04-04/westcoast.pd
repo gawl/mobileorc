@@ -18,10 +18,10 @@
 #X obj 50 128 int;
 #X obj 127 107 s clock-on;
 #X obj 743 128 s slope-cycle;
-#X obj 50 373 route /8steps /8reset /8scale;
-#X obj 50 394 s 8steps;
-#X obj 107 394 s 8reset;
-#X obj 164 394 s 8scale;
+#X obj 52 422 route /8steps /8reset /8scale;
+#X obj 50 444 s 8steps;
+#X obj 107 444 s 8reset;
+#X obj 164 444 s 8scale;
 #X obj 50 80 route /clock-rate /clock-on /rvolt-random /rvolt-slew
 /slope-rise /slope-fall /slope-depth /slope-speed /slope-curve /slope-cycle
 , f 129;
@@ -40,10 +40,7 @@
 #X obj 281 107 * 127;
 #X obj 204 148 s rvolt-random;
 #X obj 281 170 s rvolt-slew;
-#X obj 50 235 route /osc1-pitch /osc2-pitch /fold /gate-lev /del-rateL
-/del-rateR /del-feedback /del-lowpass /mix-synth /mix-delay, f 118
-;
-#X obj 50 344 s osc1-pitch;
+#X obj 50 351 s osc1-pitch;
 #X obj 191 260 * 127;
 #X obj 261 305 * 127;
 #X obj 332 260 * 127;
@@ -52,7 +49,7 @@
 #X obj 543 302 * 127;
 #X obj 614 260 * 127;
 #X obj 684 260 * 127;
-#X obj 120 324 s osc2-pitch;
+#X obj 138 350 s osc2-pitch;
 #X obj 191 281 s fold;
 #X obj 261 326 s gate-lev;
 #X obj 332 281 s del-rateL;
@@ -61,12 +58,6 @@
 #X obj 543 324 s del-lowpass;
 #X obj 614 281 s mix-synth;
 #X obj 684 281 s mix-delay;
-#X obj 50 281 int;
-#X obj 50 260 * 10;
-#X obj 50 302 * 12.7;
-#X obj 120 281 int;
-#X obj 120 260 * 10;
-#X obj 120 302 * 12.7;
 #X obj 261 262 *;
 #X obj 261 283 *;
 #X obj 881 425 send toGUI;
@@ -74,11 +65,18 @@
 #X msg 881 87 list /clock-rate 0.7 \, list /clock-on 1 \, list /rvolt-random
 0.2 \, list /rvolt-slew 0.3 \, list /slope-rise 0.4 \, list /slope-fall
 0.4 \, list /slope-depth 0.5 \, list /slope-speed 1 \, list /slope-curve
-1 \, list /slope-cycle 0 \, list /osc1-pitch 0.7 \, list /osc2-pitch
+1 \, list /slope-cycle 0 \, list /osc-pitch 0.7 \, list /osc-detune
 0.7 \, list /fold 0.8 \, list /gate-lev 0 \, list /del-rateL 0.9 \,
 list /del-rateR 0.94 \, list /del-feedback 0.3 \, list /del-lowpass
 0.4 \, list /mix-synth 1 \, list /mix-delay 0.7 \, list /8steps 0.28
 0.71 0.37 0.82 0.097 0.943 0.517 0.65, f 29;
+#X obj 50 235 route /osc-pitch /osc-detune /fold /gate-lev /del-rateL
+/del-rateR /del-feedback /del-lowpass /mix-synth /mix-delay, f 118
+;
+#X obj 120 273 + 1;
+#X obj 120 319 * 1;
+#X obj 120 294 t b f;
+#X obj 50 262 * 127;
 #X connect 0 0 1 0;
 #X connect 1 0 11 0;
 #X connect 2 0 4 0;
@@ -96,7 +94,7 @@ list /del-rateR 0.94 \, list /del-feedback 0.3 \, list /del-lowpass
 #X connect 11 7 13 0;
 #X connect 11 8 12 0;
 #X connect 11 9 6 0;
-#X connect 11 10 27 0;
+#X connect 11 10 50 0;
 #X connect 14 0 15 0;
 #X connect 15 0 20 0;
 #X connect 16 0 17 0;
@@ -105,18 +103,7 @@ list /del-rateR 0.94 \, list /del-feedback 0.3 \, list /del-lowpass
 #X connect 19 0 22 0;
 #X connect 23 0 25 0;
 #X connect 24 0 26 0;
-#X connect 27 0 47 0;
-#X connect 27 1 50 0;
-#X connect 27 2 29 0;
-#X connect 27 3 52 0;
-#X connect 27 3 52 1;
-#X connect 27 4 31 0;
-#X connect 27 5 32 0;
-#X connect 27 6 33 0;
-#X connect 27 7 34 0;
-#X connect 27 8 35 0;
-#X connect 27 9 36 0;
-#X connect 27 10 7 0;
+#X connect 28 0 37 0;
 #X connect 29 0 38 0;
 #X connect 30 0 39 0;
 #X connect 31 0 40 0;
@@ -124,18 +111,29 @@ list /del-rateR 0.94 \, list /del-feedback 0.3 \, list /del-lowpass
 #X connect 33 0 42 0;
 #X connect 34 0 43 0;
 #X connect 35 0 44 0;
-#X connect 36 0 45 0;
-#X connect 46 0 48 0;
-#X connect 47 0 46 0;
-#X connect 48 0 28 0;
-#X connect 49 0 51 0;
-#X connect 50 0 49 0;
-#X connect 51 0 37 0;
-#X connect 52 0 53 0;
-#X connect 52 0 53 1;
-#X connect 53 0 30 0;
-#X connect 55 0 56 0;
-#X connect 56 0 54 0;
+#X connect 45 0 46 0;
+#X connect 45 0 46 1;
+#X connect 46 0 29 0;
+#X connect 48 0 49 0;
+#X connect 49 0 47 0;
+#X connect 50 0 54 0;
+#X connect 50 1 51 0;
+#X connect 50 2 28 0;
+#X connect 50 3 45 0;
+#X connect 50 3 45 1;
+#X connect 50 4 30 0;
+#X connect 50 5 31 0;
+#X connect 50 6 32 0;
+#X connect 50 7 33 0;
+#X connect 50 8 34 0;
+#X connect 50 9 35 0;
+#X connect 50 10 7 0;
+#X connect 51 0 53 0;
+#X connect 52 0 36 0;
+#X connect 53 0 52 0;
+#X connect 53 1 52 1;
+#X connect 54 0 27 0;
+#X connect 54 0 52 0;
 #X restore 824 310 pd mobmuplat;
 #X obj 761 50 basic-osc 2;
 #X connect 1 0 2 0;

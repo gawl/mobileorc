@@ -3,34 +3,28 @@
 #X obj 27 229 catch~ out;
 #N canvas 633 332 202 197 reverb 0;
 #X obj 64 111 rev1~;
-#X msg 132 66 50;
 #X obj 132 41 loadbang;
 #X obj 9 22 inlet~;
 #X obj 9 170 outlet~;
 #X obj 9 98 *~ 0.3;
 #X obj 9 143 clip~ -0.999 0.999;
-#X obj 82 11 r rsend;
-#X msg 82 33 \$1 50;
-#X obj 82 55 line~;
-#X obj 64 90 *~;
-#X connect 0 0 6 0;
-#X connect 1 0 0 1;
-#X connect 2 0 1 0;
-#X connect 3 0 5 0;
-#X connect 3 0 10 0;
-#X connect 5 0 6 0;
-#X connect 6 0 4 0;
-#X connect 7 0 8 0;
-#X connect 8 0 9 0;
-#X connect 9 0 10 1;
-#X connect 10 0 0 0;
+#X obj 64 90 *~ 0.5;
+#X msg 132 66 40;
+#X connect 0 0 5 0;
+#X connect 1 0 7 0;
+#X connect 2 0 4 0;
+#X connect 2 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 1;
 #X restore 27 256 pd reverb;
-#N canvas 89 93 637 499 presets 0;
+#N canvas 1341 170 637 499 presets 0;
 #X obj 252 51 route 0 1 2 3 4 5;
 #X obj 252 26 r preset;
 #X obj -154 20 loadbang;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array karlheinz 100 float 3;
+#N canvas 334 241 924 560 (subpatch) 0;
+#X array karlheinz 90 float 3;
 #A 0 50 53.3247 56.8706 60.6522 64.6852 68.9865 73.5737 78.466 83.6836
 89.2481 95.1827 101.512 108.262 115.461 123.138 131.326 140.059 149.372
 159.305 169.898 181.195 193.243 206.093 219.797 234.413 250 266.624
@@ -41,9 +35,8 @@
 2886.52 3078.46 3283.16 3501.47 3734.3 3982.62 4247.44 4529.87 4831.09
 5152.33 5494.93 5860.32 6250 6665.59 7108.82 7581.52 8085.66 8623.31
 9196.72 9808.25 10460.5 11156 11897.8 12689 13532.7 14432.6 15392.3
-700.295 746.861 796.523 849.488 905.975 966.217 1030.47 1098.99 1172.06
-1250;
-#X coords 0 0 100 20000 200 140 1 0 0;
+;
+#X coords 0 0 90 20000 200 140 1 0 0;
 #X restore -173 272 graph;
 #X msg -183 56 \; karlheinz 0 50 53.3247 56.8706 60.6522 64.6852 68.9865
 73.5737 78.466 83.6836 89.2481 95.1827 101.512 108.262 115.461 123.138
@@ -74,7 +67,7 @@
 #X connect 2 0 4 0;
 #X connect 2 0 5 0;
 #X restore 82 288 pd presets;
-#N canvas 380 576 828 699 mobmuplat_ctl 0;
+#N canvas 910 577 828 699 mobmuplat_ctl 0;
 #X obj 25 17 receive fromGUI;
 #X obj 25 45 list trim;
 #X obj 26 70 route /XYPad;
